@@ -50,5 +50,8 @@ TagManager:
   - name: interaction
     uniqueID: 3451159737
     locked: 0
+  - name: enemy
+    uniqueID: 1975028681
+    locked: 0
   m_RenderingLayers:
   - Default
