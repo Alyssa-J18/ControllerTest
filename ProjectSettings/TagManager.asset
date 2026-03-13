@@ -47,14 +47,14 @@ TagManager:
   - name: foreground
     uniqueID: 3077388479
     locked: 0
+  - name: evemyBehind
+    uniqueID: 201269459
+    locked: 0
   - name: interaction
     uniqueID: 3451159737
     locked: 0
   - name: enemy
     uniqueID: 1975028681
-    locked: 0
-  - name: evemyBehind
-    uniqueID: 201269459
     locked: 0
   m_RenderingLayers:
   - Default
