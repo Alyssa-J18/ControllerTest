@@ -24,6 +24,11 @@ public class PlayerController : MonoBehaviour
     {
         MovePlayer();
         GroundCheck();
+
+        if(transform.position.y < -10)
+        {
+            Die();
+        }
     }
 
     void MovePlayer()
@@ -73,5 +78,9 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawWireCube(groundCheckPos.position, groundCheckSize);
     }
         
+    private void Die()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+    }
     
 }

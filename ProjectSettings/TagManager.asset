@@ -53,5 +53,8 @@ TagManager:
   - name: enemy
     uniqueID: 1975028681
     locked: 0
+  - name: evemyBehind
+    uniqueID: 201269459
+    locked: 0
   m_RenderingLayers:
   - Default
