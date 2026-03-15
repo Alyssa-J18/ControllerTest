@@ -1276,7 +1276,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -1360,7 +1360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bf52b91c344ef84e92a06c7213b29f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NextLevel
-  nextLevelName: Level2
+  nextLevelName: Level4
 --- !u!212 &635105215
 SpriteRenderer:
   serializedVersion: 2
@@ -1406,8 +1406,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: -843807559
-  m_SortingLayer: 4
+  m_SortingLayerID: -849156919
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -7341407202210888751, guid: c77bda4bac97e414fbebcdc9315c86b7, type: 3}
@@ -5379,6 +5379,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   maxJumps: 2
+  health: 3
+  healthImage: {fileID: 0}
+  iFrameDuration: 1
 --- !u!50 &2062797391
 Rigidbody2D:
   serializedVersion: 5
