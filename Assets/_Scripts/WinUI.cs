@@ -2,17 +2,14 @@ using UnityEngine;
 
 public class WinUI : MonoBehaviour
 {
-    void Start()
-    {
-        gameObject.SetActive(false);
-    }
+    public GameObject container;
     public void MainMenu()
     {
-        GameManager.Instance.MainMenu();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 
     public void Quit()
     {
-        GameManager.Instance.QuitGame();
+        Application.Quit();
     }
 }
