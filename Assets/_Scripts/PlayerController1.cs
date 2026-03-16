@@ -101,6 +101,11 @@ public class PlayerController : MonoBehaviour
                 Die();
             }
         }
+
+        if (collision.CompareTag("Bear"))
+        {
+            Die();
+        }
     }
 
 
@@ -130,6 +135,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        rb.linearVelocity = Vector2.zero;
         gameOverScreen.SetActive(true);
     }
 }

@@ -1049,6 +1049,8 @@ GameObject:
   - component: {fileID: 1120089218}
   - component: {fileID: 1120089222}
   - component: {fileID: 1120089221}
+  - component: {fileID: 1120089224}
+  - component: {fileID: 1120089223}
   m_Layer: 0
   m_Name: CousinBear
   m_TagString: Untagged
@@ -1218,6 +1220,30 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 19.441673, y: 24.17}
   m_EdgeRadius: 0
+--- !u!114 &1120089223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120089217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc299493ba144646b555ac7bf631c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DraggableSprite
+--- !u!114 &1120089224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120089217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc299493ba144646b555ac7bf631c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DraggableSprite
 --- !u!1 &1253658341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,6 +1390,7 @@ GameObject:
   - component: {fileID: 1358853883}
   - component: {fileID: 1358853887}
   - component: {fileID: 1358853886}
+  - component: {fileID: 1358853888}
   m_Layer: 0
   m_Name: SisterBear
   m_TagString: Untagged
@@ -1533,6 +1560,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 19.441673, y: 24.17}
   m_EdgeRadius: 0
+--- !u!114 &1358853888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1358853882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc299493ba144646b555ac7bf631c17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DraggableSprite
 --- !u!1 &1589658957
 GameObject:
   m_ObjectHideFlags: 0

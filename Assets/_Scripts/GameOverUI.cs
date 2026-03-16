@@ -6,9 +6,15 @@ public class GameOverUI : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+
+    public void Show()
+    {
+        gameObject.SetActive(true);
+        Time.timeScale = 0f;
+    }
     public void Restart()
     {
-        gameObject.SetActive(false);
+        Time.timeScale = 0f;
         GameManager.Instance.RestartLevel();
     }
 

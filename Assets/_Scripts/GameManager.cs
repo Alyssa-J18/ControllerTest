@@ -11,20 +11,15 @@ public class GameManager : MonoBehaviour
     [Header("Game State")]
     public int score = 0;
 
-    [Header("Scene Settings")]
-    [Tooltip("Optional: set a scene name to load on game over.")]
 
-    public GameObject objectToAppear; 
-    private bool isCollected = false;
+
+ 
 
 
 
     void Start()
     {
-        if (objectToAppear != null)
-        {
-            objectToAppear.SetActive(false);
-        }
+        
     }
 
     void Awake()
@@ -39,24 +34,14 @@ public class GameManager : MonoBehaviour
     DontDestroyOnLoad(gameObject);
 }
 
-    public void ItemCollected()
-    {
-        if (!isCollected)
-        {
-            isCollected = true;
-            if (objectToAppear != null)
-            {
-                objectToAppear.SetActive(true);
-            }
-        }
-    }
-
     public void AddScore(int amount)
     {
         score += amount;
         Debug.Log($"Score: {score}");
         // In a real project, you might raise an event here to update UI.
     }
+
+    
 
     public void ResetGame()
     {

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class BearAttack : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class BearAttack : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckDistance = 0.2f;
     public Vector2 groundCheckSize = new Vector2(1.5f, 0.2f);
+    
+    
 
     private Rigidbody2D rb;
     private bool isGrounded;
@@ -58,11 +61,12 @@ public class BearAttack : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+        if(player != null)
         {
-            collision.gameObject.GetComponent<PlayerController>().Die();
+            player.Die();
         }
     }
 
