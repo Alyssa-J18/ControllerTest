@@ -13,12 +13,17 @@ public class PlayerController : MonoBehaviour
     public int maxJumps = 2;
     int jumpsRemaining;
     
+    public int maxHealth = 3;
     public int health = 3;
     public Image healthImage;
     private SpriteRenderer spriteRenderer;
 
     public float iFrameDuration = 1f;
     private bool isInvisible = false;
+
+    public int honey;
+
+    public GameObject gameOverScreen;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -39,8 +44,9 @@ public class PlayerController : MonoBehaviour
             Die();
         }
 
-        healthImage.fillAmount = health / 3f;
+        healthImage.fillAmount = (float)health / maxHealth;
     }
+
 
     void MovePlayer()
 {
@@ -121,10 +127,9 @@ public class PlayerController : MonoBehaviour
         spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1);
         isInvisible = false;
     }
-        
-    private void Die()
+
+    public void Die()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        gameOverScreen.SetActive(true);
     }
-    
 }

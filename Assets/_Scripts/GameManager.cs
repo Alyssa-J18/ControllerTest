@@ -10,24 +10,45 @@ public class GameManager : MonoBehaviour
 
     [Header("Game State")]
     public int score = 0;
-    public int lives = 3;
 
     [Header("Scene Settings")]
     [Tooltip("Optional: set a scene name to load on game over.")]
-    public string gameOverSceneName = "GameOver";
 
-    private void Awake()
+    public GameObject objectToAppear; 
+    private bool isCollected = false;
+
+
+
+    void Start()
     {
-        // If an instance already exists and it's not this one, destroy this duplicate.
-        if (Instance != null && Instance != this)
+        if (objectToAppear != null)
         {
-            Destroy(gameObject);
-            return;
+            objectToAppear.SetActive(false);
         }
+    }
 
-        // Set the instance and persist across scenes.
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
+    void Awake()
+{
+    if (Instance != null && Instance != this)
+    {
+        Destroy(gameObject);
+        return;
+    }
+
+    Instance = this;
+    DontDestroyOnLoad(gameObject);
+}
+
+    public void ItemCollected()
+    {
+        if (!isCollected)
+        {
+            isCollected = true;
+            if (objectToAppear != null)
+            {
+                objectToAppear.SetActive(true);
+            }
+        }
     }
 
     public void AddScore(int amount)
@@ -37,30 +58,27 @@ public class GameManager : MonoBehaviour
         // In a real project, you might raise an event here to update UI.
     }
 
-    public void LoseLife(int amount = 1)
-    {
-        lives -= amount;
-        Debug.Log($"Lives: {lives}");
-
-        if (lives <= 0)
-        {
-            GameOver();
-        }
-    }
-
     public void ResetGame()
     {
         score = 0;
-        lives = 3;
         Debug.Log("Game reset.");
     }
 
-    private void GameOver()
+    public void RestartLevel()
     {
-        Debug.Log("Game Over!");
-        if (!string.IsNullOrEmpty(gameOverSceneName))
-        {
-            SceneManager.LoadScene(gameOverSceneName);
-        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+
+
 }

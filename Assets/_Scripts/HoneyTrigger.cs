@@ -4,12 +4,22 @@ using TMPro;
 
 public class HoneyTrigger : MonoBehaviour
 {
-    void OnTriggerEnter2D(Collider2D other)
+public TextMeshProUGUI honeyText;
+
+
+private void Start()
+{
+    honeyText = GameObject.FindWithTag("honeyText").GetComponent<TextMeshProUGUI>();
+}
+
+
+private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Player"))
+        if(collision.gameObject.tag == "Player")
         {
-            Debug.Log("Player has triggered the honey pot!");
-            // Add additional logic here, e.g., increase score, play sound, etc.
+            PlayerController player = collision.gameObject.GetComponent<PlayerController>();
+            player.honey += 1;
+            honeyText.text = player.honey.ToString();
             Destroy(gameObject);
         }
     }
