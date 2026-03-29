@@ -18,8 +18,8 @@ private void OnTriggerEnter2D(Collider2D collision)
         if(collision.gameObject.tag == "Player")
         {
             PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-            player.honey += 1;
-            honeyText.text = player.honey.ToString();
+            GameManager.Instance.AddScore(1);
+            honeyText.text = GameManager.Instance.score.ToString();
             Destroy(gameObject);
         }
     }

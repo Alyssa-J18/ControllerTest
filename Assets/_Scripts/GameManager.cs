@@ -11,15 +11,9 @@ public class GameManager : MonoBehaviour
     [Header("Game State")]
     public int score = 0;
 
-
-
- 
-
-
-
     void Start()
     {
-        
+       
     }
 
     void Awake()

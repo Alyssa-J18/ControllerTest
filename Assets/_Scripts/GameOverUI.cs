@@ -14,7 +14,7 @@ public class GameOverUI : MonoBehaviour
     }
     public void Restart()
     {
-        Time.timeScale = 0f;
+        Time.timeScale = 1f;
         GameManager.Instance.RestartLevel();
     }
 
