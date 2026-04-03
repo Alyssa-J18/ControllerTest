@@ -22,5 +22,6 @@ public class PauseButton : MonoBehaviour
     public void MainMenuButton()
     {
         GameManager.Instance.MainMenu();
+        Time.timeScale = 1;
     }
 }

@@ -6,14 +6,14 @@ public class WinUI : MonoBehaviour
     public GameObject container;
     public TextMeshProUGUI honeyText;
 
-    void Start()
+    void start()
     {
-        honeyText.text = GameManager.Instance.score.ToString();
+        honeyText.text = CoinTracker.Instance.Honeycollected.ToString();
     }
     public void MainMenu()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
-        GameManager.Instance.score = 0;
+        CoinTracker.Instance.resetCoins();
     }
 
     

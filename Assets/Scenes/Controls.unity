@@ -1770,7 +1770,6 @@ GameObject:
   - component: {fileID: 886399230}
   - component: {fileID: 886399233}
   - component: {fileID: 886399232}
-  - component: {fileID: 886399231}
   m_Layer: 5
   m_Name: Dialogue Text
   m_TagString: DialogueText
@@ -1797,19 +1796,6 @@ RectTransform:
   m_AnchoredPosition: {x: -105.15011, y: 7.2272}
   m_SizeDelta: {x: 465.6653, y: 134.5037}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &886399231
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 886399229}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e7bab8ff48569a448f1bd7a30928639, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Dialogue
-  dialogueLines: []
 --- !u!114 &886399232
 MonoBehaviour:
   m_ObjectHideFlags: 0

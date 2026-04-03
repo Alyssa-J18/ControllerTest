@@ -40,11 +40,17 @@ public class GameManager : MonoBehaviour
     public void ResetGame()
     {
         score = 0;
+        CoinTracker.Instance.RestoreLevelStart();
         Debug.Log("Game reset.");
     }
 
     public void RestartLevel()
     {
+        if (CoinTracker.Instance != null)
+        {
+            CoinTracker.Instance.RestoreLevelStart();
+        }
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

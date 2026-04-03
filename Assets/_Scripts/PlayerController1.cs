@@ -25,12 +25,18 @@ public class PlayerController : MonoBehaviour
 
     public GameObject gameOverScreen;
 
+    public AudioClip jumpClip;
+    public AudioClip damageClip;
+
+    private AudioSource audioSource;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         jumpsRemaining = maxJumps;
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -69,6 +75,7 @@ public class PlayerController : MonoBehaviour
     if (jumpsRemaining > 0 && Input.GetKeyDown(KeyCode.Space))
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
+        PlaySFX(jumpClip);
         jumpsRemaining--;
     }
 }
@@ -91,6 +98,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.CompareTag("Damage"))
         {
+            PlaySFX(damageClip);
             if (isInvisible) return;
             health -= 1;
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);
@@ -137,5 +145,12 @@ public class PlayerController : MonoBehaviour
     {
         rb.linearVelocity = Vector2.zero;
         gameOverScreen.SetActive(true);
+    }
+
+    private void PlaySFX(AudioClip audioClip, float volume = 1f)
+    {
+        audioSource.clip = audioClip;
+        audioSource.volume = volume;
+        audioSource.Play();
     }
 }
